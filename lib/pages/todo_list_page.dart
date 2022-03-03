@@ -58,6 +58,7 @@ class _TodoListPageState extends State<TodoListPage> {
                           Todo newTodo = Todo(
                             title: text,
                             dateTime: DateTime.now(),
+                            isChecked: false,
                           );
                           todos.add(newTodo);
                         });

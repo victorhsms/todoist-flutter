@@ -26,22 +26,29 @@ class TodoListItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
           padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: Row(
             children: [
-              Text(
-                DateFormat('dd/MM/yyyy - HH:mm').format(todo.dateTime),
-                style: const TextStyle(
-                  fontSize: 12,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      DateFormat('dd/MM/yyyy - HH:mm').format(todo.dateTime),
+                      style: const TextStyle(
+                        fontSize: 12,
+                      ),
+                    ),
+                    Text(
+                      todo.title,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Text(
-                todo.title,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              Checkbox(value: todo.isChecked, onChanged: (bool? todo) {},),
             ],
           ),
         ),
